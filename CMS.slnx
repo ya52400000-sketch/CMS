@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="CMS.API/CMS.API.csproj" />
+  <Project Path="CMS.BLL/CMS.BLL.csproj" />
+  <Project Path="CMS.DAL/CMS.DAL.csproj" />
+</Solution>
