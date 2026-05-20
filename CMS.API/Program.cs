@@ -113,17 +113,14 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-app.UseSwagger();
-app.UseSwaggerUI(c =>
+if (app.Environment.IsDevelopment())
 {
-    // Fix: Removed "../" to ensure correct routing on IIS
-    c.SwaggerEndpoint("swagger/v1/swagger.json", "V1");
-    c.RoutePrefix = string.Empty; // Set Swagger as the default home page
-});
-
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 app.UseHttpsRedirection();
 app.UseRouting();
-app.UseCors("AllowAll");
+
 
 app.UseAuthentication();
 app.UseAuthorization();
